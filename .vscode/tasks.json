@@ -6,7 +6,7 @@
         {
             "label": "make test",
             "type": "shell",
-            "command": "make -C json-to-csv test",
+            "command": "make test",
             "problemMatcher": [],
             "group": {
                 "kind": "test",
