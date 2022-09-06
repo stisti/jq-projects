@@ -3,7 +3,7 @@
 
 JQ = jq
 
-UNNEST_TESTS = object only-array small-array
+UNNEST_TESTS = object only-array small-array jq-issues
 UNNEST_TEST_RUNS = $(UNNEST_TESTS:%=test/.test-unnest-%)
 
 CSV_TESTS = object only-array small-array jq-issues
