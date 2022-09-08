@@ -12,6 +12,9 @@ CSV_TEST_RUNS = $(CSV_TESTS:%=test/.test-csv-%)
 TEST_RUNS = $(UNNEST_TEST_RUNS) $(CSV_TEST_RUNS)
 .INTERMEDIATE: $(TEST_RUNS)
 
+TERMINAL_COLS = $(shell tput cols)
+TERMINAL_TRICK = $(shell seq -s " " $(TERMINAL_COLS))
+
 test: announce $(TEST_RUNS)
 	@echo
 	@echo "TEST PASS"
@@ -19,8 +22,11 @@ test: announce $(TEST_RUNS)
 
 announce:
 	@echo
-	@echo "============================================================="
-	@echo "TESTING: $(TEST_RUNS)"
+	@printf -- '=%.0s' $(TERMINAL_TRICK)
+	@echo
+	@echo "TESTING:"
+	@echo "  - tests for unnest: $(UNNEST_TESTS)"
+	@echo "  - tests for csv   : $(CSV_TESTS)"
 	@echo
 
 # Check test outputs
