@@ -34,7 +34,7 @@ It depends on the `--stream` and `-s` options.
 
 ```shell
 jq --stream -s -f unnest.jq nested.json \
-| jq -s -r -f json-to-csv
+| jq -s -r -f json-to-csv.jq
 ```
 
 ## Tests
