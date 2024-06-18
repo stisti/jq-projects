@@ -1,5 +1,5 @@
 #!/bin/bash
-image="stisti/jq:1.6"
+image="stisti/jq:1.7.1"
 if tty -s; then
     # our stdin is a tty, which means we are not reading from file
     # -> last parameter must be a file
